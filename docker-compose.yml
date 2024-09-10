@@ -40,7 +40,7 @@ services:
       POSTGRES_USER_FILE: /run/secrets/db_user
       POSTGRES_PASSWORD_FILE: /run/secrets/db_password
     volumes:
-      - ./postgres/data:/var/lib/postgresql/data
+      - mb_data:/var/lib/postgresql/data
     networks:
       - metanet1
     secrets:
@@ -83,3 +83,5 @@ secrets:
      file: db_user.txt
    mb_key:
      file: mb_key.txt
+volumes:
+  mb_data:
